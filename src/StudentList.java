@@ -114,23 +114,23 @@ public class StudentList {
 
         return switch (key) {
             case FIRSTNAME -> {
-                QuickSort.quickSortFirst(students, low, high);
+                QuickSort.quickSort(students, low, high, Student.SortKey.FIRSTNAME);
                 yield true;
             }
             case LASTNAME -> {
-                QuickSort.quickSortLast(students, low, high);
+                QuickSort.quickSort(students, low, high, Student.SortKey.LASTNAME);
                 yield true;
             }
             case STUDENTID -> {
-                QuickSort.quicksortID(students, low, high);
+                QuickSort.quickSort(students, low, high, Student.SortKey.STUDENTID);
                 yield true;
             }
             case WEIGHT -> {
-                QuickSort.quicksortWeight(students, low, high);
+                QuickSort.quickSort(students, low, high, Student.SortKey.WEIGHT);
                 yield true;
             }
             case BIRTHDAY -> {
-                QuickSort.quicksortBirthday(students, low, high);
+                QuickSort.quickSort(students, low, high, Student.SortKey.BIRTHDAY);
                 yield true;
             }
             default -> false;
