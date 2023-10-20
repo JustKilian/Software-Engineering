@@ -156,6 +156,7 @@ class StudentListTest {
         studentList.add(student8);
         studentList.add(student9);
         studentList.add(student10);
+        //studentList.sort(Student.SortKey.TEST);
         studentList.sort(Student.SortKey.FIRSTNAME);
         assertEquals(student1, studentList.get(0));
         assertEquals(student2, studentList.get(1));
