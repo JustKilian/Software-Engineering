@@ -112,28 +112,56 @@ public class StudentList {
         int low = 0;
         int high = students.length - 1;
 
-        return switch (key) {
+        QuickSort.quickSort(students, low, high, key);
+
+        return isSorted(key);
+    }
+
+    private boolean isSorted(Student.SortKey key) {
+        switch (key) {
             case FIRSTNAME -> {
-                QuickSort.quickSort(students, low, high, Student.SortKey.FIRSTNAME);
-                yield true;
+                for (int i = 0; i < students.length - 1; i++) {
+                    if (students[i].getFirstname().compareTo(students[i + 1].getFirstname()) > 0) {
+                        return false;
+                    }
+                }
+                return true;
             }
             case LASTNAME -> {
-                QuickSort.quickSort(students, low, high, Student.SortKey.LASTNAME);
-                yield true;
+                for (int i = 0; i < students.length - 1; i++) {
+                    if (students[i].getLastname().compareTo(students[i + 1].getLastname()) > 0) {
+                        return false;
+                    }
+                }
+                return true;
             }
             case STUDENTID -> {
-                QuickSort.quickSort(students, low, high, Student.SortKey.STUDENTID);
-                yield true;
+                for (int i = 0; i < students.length - 1; i++) {
+                    if (students[i].getStudentId() > students[i + 1].getStudentId()) {
+                        return false;
+                    }
+                }
+                return true;
             }
             case WEIGHT -> {
-                QuickSort.quickSort(students, low, high, Student.SortKey.WEIGHT);
-                yield true;
+                for (int i = 0; i < students.length - 1; i++) {
+                    if (students[i].getWeight() > students[i + 1].getWeight()) {
+                        return false;
+                    }
+                }
+                return true;
             }
             case BIRTHDAY -> {
-                QuickSort.quickSort(students, low, high, Student.SortKey.BIRTHDAY);
-                yield true;
+                for (int i = 0; i < students.length - 1; i++) {
+                    if (students[i].getBirthday().compareTo(students[i + 1].getBirthday()) > 0) {
+                        return false;
+                    }
+                }
+                return true;
             }
-            default -> false;
-        };
+            default -> {
+                return false;
+            }
+        }
     }
 }
