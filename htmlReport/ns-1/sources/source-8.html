@@ -86,33 +86,33 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void getFirstname() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        assertEquals(&quot;Kilian&quot;, student.getFirstname());</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        assertEquals(&quot;firstname&quot;, student.getFirstname());</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void setFirstname() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        student.setFirstname(&quot;Kilian2&quot;);</b>
-<b class="fc">&nbsp;        assertEquals(&quot;Kilian2&quot;, student.getFirstname());</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        student.setFirstname(&quot;firstname2&quot;);</b>
+<b class="fc">&nbsp;        assertEquals(&quot;firstname2&quot;, student.getFirstname());</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void getLastname() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        assertEquals(&quot;Achenbach&quot;, student.getLastname());</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        assertEquals(&quot;lastname&quot;, student.getLastname());</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void setLastname() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        student.setLastname(&quot;Achenbach2&quot;);</b>
-<b class="fc">&nbsp;        assertEquals(&quot;Achenbach2&quot;, student.getLastname());</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        student.setLastname(&quot;lastname2&quot;);</b>
+<b class="fc">&nbsp;        assertEquals(&quot;lastname2&quot;, student.getLastname());</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void getStudentId() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        assertEquals(123456789, student.getStudentId());</b>
 &nbsp;    }
 &nbsp;
@@ -121,45 +121,45 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void getWeight() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        assertEquals(80.0, student.getWeight(), 0.0001);</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void setWeight() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        student.setWeight(80.1);</b>
 <b class="fc">&nbsp;        assertEquals(80.1, student.getWeight(), 0.0001);</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void getBirthday() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        assertEquals(new Date(2000, 5, 5), student.getBirthday());</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        assertEquals(new Date(1989, 11, 11), student.getBirthday());</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void setBirthday() {
-<b class="fc">&nbsp;        Date birthday = new Date(2000, 5, 5);</b>
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, birthday);</b>
+<b class="fc">&nbsp;        Date birthday = new Date(1989, 11, 11);</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, birthday);</b>
 <b class="fc">&nbsp;        student.setBirthday(new Date(2001, 5, 5));</b>
 <b class="fc">&nbsp;        assertEquals(new Date(2001, 5, 5), student.getBirthday());</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void getName() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        assertEquals(&quot;Kilian Achenbach&quot;, student.getName());</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        assertEquals(&quot;firstname lastname&quot;, student.getName());</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void constructor() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        assertEquals(&quot;Kilian&quot;, student.getFirstname());</b>
-<b class="fc">&nbsp;        assertEquals(&quot;Achenbach&quot;, student.getLastname());</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        assertEquals(&quot;firstname&quot;, student.getFirstname());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;lastname&quot;, student.getLastname());</b>
 <b class="fc">&nbsp;        assertEquals(123456789, student.getStudentId());</b>
 <b class="fc">&nbsp;        assertEquals(80.0, student.getWeight(), 0.0001);</b>
-<b class="fc">&nbsp;        assertEquals(new Date(2000, 5, 5), student.getBirthday());</b>
+<b class="fc">&nbsp;        assertEquals(new Date(1989, 11, 11), student.getBirthday());</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
@@ -175,8 +175,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void toStringTest() {
-<b class="fc">&nbsp;        Student student = new Student(&quot;Kilian&quot;, &quot;Achenbach&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        assertEquals(&quot;Student{firstname=&#39;Kilian, lastname=&#39;Achenbach, studentId=123456789, weight=80.0, birthday=Tue Jun 05 00:00:00 CEST 3900}&quot;, student.toString());</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Student{firstname=&#39;firstname, lastname=&#39;lastname, studentId=123456789, weight=80.0, birthday=Wed Dec 11 00:00:00 CET 3889}&quot;, student.toString());</b>
 &nbsp;    }
 &nbsp;}
 </code>
@@ -202,7 +202,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-10-26 09:14</div>
+    <div style="float:right;">generated on 2023-10-26 09:31</div>
 </div>
 </body>
 </html>

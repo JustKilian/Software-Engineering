@@ -44,15 +44,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (12/12)
+    (13/13)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    98.6%
+    92.7%
   </span>
   <span class="absValue">
-    (69/70)
+    (76/82)
   </span>
 </td>
 </tr>
@@ -82,15 +82,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (13/13)
+    (14/14)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    98.6%
+    92.8%
   </span>
   <span class="absValue">
-    (70/71)
+    (77/83)
   </span>
 </td>
 </tr>
@@ -215,29 +215,57 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        int low = 0;</b>
 <b class="fc">&nbsp;        int high = students.length - 1;</b>
 &nbsp;
-<b class="fc">&nbsp;        return switch (key) {</b>
+<b class="fc">&nbsp;        QuickSort.quickSort(students, low, high, key);</b>
+&nbsp;
+<b class="fc">&nbsp;        return isSorted(key);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private boolean isSorted(Student.SortKey key) {
+<b class="fc">&nbsp;        switch (key) {</b>
 &nbsp;            case FIRSTNAME -&gt; {
-<b class="fc">&nbsp;                QuickSort.quickSort(students, low, high, Student.SortKey.FIRSTNAME);</b>
-<b class="fc">&nbsp;                yield true;</b>
+<b class="fc">&nbsp;                for (int i = 0; i &lt; students.length - 1; i++) {</b>
+<b class="fc">&nbsp;                    if (students[i].getFirstname().compareTo(students[i + 1].getFirstname()) &gt; 0) {</b>
+<b class="nc">&nbsp;                        return false;</b>
+&nbsp;                    }
+&nbsp;                }
+<b class="fc">&nbsp;                return true;</b>
 &nbsp;            }
 &nbsp;            case LASTNAME -&gt; {
-<b class="fc">&nbsp;                QuickSort.quickSort(students, low, high, Student.SortKey.LASTNAME);</b>
-<b class="fc">&nbsp;                yield true;</b>
+<b class="fc">&nbsp;                for (int i = 0; i &lt; students.length - 1; i++) {</b>
+<b class="fc">&nbsp;                    if (students[i].getLastname().compareTo(students[i + 1].getLastname()) &gt; 0) {</b>
+<b class="nc">&nbsp;                        return false;</b>
+&nbsp;                    }
+&nbsp;                }
+<b class="fc">&nbsp;                return true;</b>
 &nbsp;            }
 &nbsp;            case STUDENTID -&gt; {
-<b class="fc">&nbsp;                QuickSort.quickSort(students, low, high, Student.SortKey.STUDENTID);</b>
-<b class="fc">&nbsp;                yield true;</b>
+<b class="fc">&nbsp;                for (int i = 0; i &lt; students.length - 1; i++) {</b>
+<b class="fc">&nbsp;                    if (students[i].getStudentId() &gt; students[i + 1].getStudentId()) {</b>
+<b class="nc">&nbsp;                        return false;</b>
+&nbsp;                    }
+&nbsp;                }
+<b class="fc">&nbsp;                return true;</b>
 &nbsp;            }
 &nbsp;            case WEIGHT -&gt; {
-<b class="fc">&nbsp;                QuickSort.quickSort(students, low, high, Student.SortKey.WEIGHT);</b>
-<b class="fc">&nbsp;                yield true;</b>
+<b class="fc">&nbsp;                for (int i = 0; i &lt; students.length - 1; i++) {</b>
+<b class="fc">&nbsp;                    if (students[i].getWeight() &gt; students[i + 1].getWeight()) {</b>
+<b class="nc">&nbsp;                        return false;</b>
+&nbsp;                    }
+&nbsp;                }
+<b class="fc">&nbsp;                return true;</b>
 &nbsp;            }
 &nbsp;            case BIRTHDAY -&gt; {
-<b class="fc">&nbsp;                QuickSort.quickSort(students, low, high, Student.SortKey.BIRTHDAY);</b>
-<b class="fc">&nbsp;                yield true;</b>
+<b class="fc">&nbsp;                for (int i = 0; i &lt; students.length - 1; i++) {</b>
+<b class="fc">&nbsp;                    if (students[i].getBirthday().compareTo(students[i + 1].getBirthday()) &gt; 0) {</b>
+<b class="nc">&nbsp;                        return false;</b>
+&nbsp;                    }
+&nbsp;                }
+<b class="fc">&nbsp;                return true;</b>
 &nbsp;            }
-<b class="nc">&nbsp;            default -&gt; false;</b>
-&nbsp;        };
+&nbsp;            default -&gt; {
+<b class="nc">&nbsp;                return false;</b>
+&nbsp;            }
+&nbsp;        }
 &nbsp;    }
 &nbsp;}
 </code>
@@ -263,7 +291,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-10-26 09:14</div>
+    <div style="float:right;">generated on 2023-10-26 09:31</div>
 </div>
 </body>
 </html>

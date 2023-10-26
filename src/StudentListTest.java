@@ -10,7 +10,7 @@ class StudentListTest {
     @Test
     void add() {
         StudentList studentList = new StudentList();
-        Student student = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student = new Student("firstname", "lastname", 123456789, 80.0, new Date(1989, 11, 11));
         assertTrue(studentList.add(student));
         assertFalse(studentList.add(student));
     }
@@ -18,9 +18,9 @@ class StudentListTest {
     @Test
     void remove() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(1989, 11, 11));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(1989, 11, 11));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(1989, 11, 11));
         studentList.add(student1);
         studentList.add(student3);
         assertTrue(studentList.remove(student1));
@@ -30,9 +30,9 @@ class StudentListTest {
     @Test
     void removeIndex() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(1989, 11, 11));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(1989, 11, 11));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(1989, 11, 11));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
@@ -44,7 +44,7 @@ class StudentListTest {
     @Test
     void get() {
         StudentList studentList = new StudentList();
-        Student student = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student = new Student("firstname", "lastname", 123456789, 80.0, new Date(1989, 11, 11));
         studentList.add(student);
         assertEquals(student, studentList.get(0));
         assertNull(studentList.get(-1));
@@ -54,9 +54,9 @@ class StudentListTest {
     @Test
     void findLastName() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(1989, 11, 11));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(1989, 11, 11));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(1989, 11, 11));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
@@ -66,9 +66,9 @@ class StudentListTest {
     @Test
     void findFirstName() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(1989, 11, 11));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(1989, 11, 11));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(1989, 11, 11));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
@@ -78,21 +78,21 @@ class StudentListTest {
     @Test
     void findStudentsByAge() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(1989, 11, 11));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(1989, 11, 11));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(1989, 11, 11));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
-        assertEquals(3, studentList.findStudentsByAge(23).size());
+        assertEquals(3, studentList.findStudentsByAge(33).size());
     }
 
     @Test
     void size() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(1989, 11, 11));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(1989, 11, 11));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(1989, 11, 11));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
@@ -108,16 +108,16 @@ class StudentListTest {
     @Test
     void copyConstructor() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("firstname", "lastname", 1, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("firstname", "lastname", 2, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("firstname", "lastname", 3, 80.0, new Date(2000, 5, 5));
-        Student student4 = new Student("firstname", "lastname", 4, 80.0, new Date(2000, 5, 5));
-        Student student5 = new Student("firstname", "lastname", 5, 80.0, new Date(2000, 5, 5));
-        Student student6 = new Student("firstname", "lastname", 6, 80.0, new Date(2000, 5, 5));
-        Student student7 = new Student("firstname", "lastname", 7, 80.0, new Date(2000, 5, 5));
-        Student student8 = new Student("firstname", "lastname", 8, 80.0, new Date(2000, 5, 5));
-        Student student9 = new Student("firstname", "lastname", 9, 80.0, new Date(2000, 5, 5));
-        Student student10 = new Student("firstname", "lastname", 10, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1, 80.0, new Date(1989, 11, 11));
+        Student student2 = new Student("firstname", "lastname", 2, 80.0, new Date(1989, 11, 11));
+        Student student3 = new Student("firstname", "lastname", 3, 80.0, new Date(1989, 11, 11));
+        Student student4 = new Student("firstname", "lastname", 4, 80.0, new Date(1989, 11, 11));
+        Student student5 = new Student("firstname", "lastname", 5, 80.0, new Date(1989, 11, 11));
+        Student student6 = new Student("firstname", "lastname", 6, 80.0, new Date(1989, 11, 11));
+        Student student7 = new Student("firstname", "lastname", 7, 80.0, new Date(1989, 11, 11));
+        Student student8 = new Student("firstname", "lastname", 8, 80.0, new Date(1989, 11, 11));
+        Student student9 = new Student("firstname", "lastname", 9, 80.0, new Date(1989, 11, 11));
+        Student student10 = new Student("firstname", "lastname", 10, 80.0, new Date(1989, 11, 11));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
@@ -137,16 +137,16 @@ class StudentListTest {
     @Test
     void sort() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("A", "J", 6, 81.0, new Date(2000, 5, 5));
-        Student student2 = new Student("B", "I", 7, 82.0, new Date(2002, 5, 5));
-        Student student3 = new Student("C", "H", 8, 83.0, new Date(1996, 5, 5));
-        Student student4 = new Student("D", "G", 9, 84.0, new Date(1972, 5, 5));
-        Student student5 = new Student("E", "F", 10, 85.0, new Date(1964, 5, 5));
-        Student student6 = new Student("F", "E", 1, 86.0, new Date(2008, 5, 5));
-        Student student7 = new Student("G", "D", 2, 87.0, new Date(2010, 5, 5));
-        Student student8 = new Student("H", "C", 3, 88.0, new Date(2012, 5, 5));
-        Student student9 = new Student("I", "B", 4, 89.0, new Date(2015, 5, 5));
-        Student student10 = new Student("J", "A", 5, 90.0, new Date(2005, 5, 5));
+        Student student1 = new Student("A", "J", 6, 81.0, new Date(2000, 11, 11));
+        Student student2 = new Student("B", "I", 7, 82.0, new Date(2002, 11, 11));
+        Student student3 = new Student("C", "H", 8, 83.0, new Date(1996, 11, 11));
+        Student student4 = new Student("D", "G", 9, 84.0, new Date(1972, 11, 11));
+        Student student5 = new Student("E", "F", 10, 85.0, new Date(1964, 11, 11));
+        Student student6 = new Student("F", "E", 1, 86.0, new Date(2008, 11, 11));
+        Student student7 = new Student("G", "D", 2, 87.0, new Date(2010, 11, 11));
+        Student student8 = new Student("H", "C", 3, 88.0, new Date(2012, 11, 11));
+        Student student9 = new Student("I", "B", 4, 89.0, new Date(2015, 11, 11));
+        Student student10 = new Student("J", "A", 5, 90.0, new Date(2005, 11, 11));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);

@@ -87,7 +87,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Test
 &nbsp;    void add() {
 <b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
-<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        assertTrue(studentList.add(student));</b>
 <b class="fc">&nbsp;        assertFalse(studentList.add(student));</b>
 &nbsp;    }
@@ -95,9 +95,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Test
 &nbsp;    void remove() {
 <b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
-<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        studentList.add(student1);</b>
 <b class="fc">&nbsp;        studentList.add(student3);</b>
 <b class="fc">&nbsp;        assertTrue(studentList.remove(student1));</b>
@@ -107,9 +107,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Test
 &nbsp;    void removeIndex() {
 <b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
-<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        studentList.add(student1);</b>
 <b class="fc">&nbsp;        studentList.add(student2);</b>
 <b class="fc">&nbsp;        studentList.add(student3);</b>
@@ -121,7 +121,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Test
 &nbsp;    void get() {
 <b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
-<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        studentList.add(student);</b>
 <b class="fc">&nbsp;        assertEquals(student, studentList.get(0));</b>
 <b class="fc">&nbsp;        assertNull(studentList.get(-1));</b>
@@ -131,9 +131,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Test
 &nbsp;    void findLastName() {
 <b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
-<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        studentList.add(student1);</b>
 <b class="fc">&nbsp;        studentList.add(student2);</b>
 <b class="fc">&nbsp;        studentList.add(student3);</b>
@@ -143,9 +143,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Test
 &nbsp;    void findFirstName() {
 <b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
-<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        studentList.add(student1);</b>
 <b class="fc">&nbsp;        studentList.add(student2);</b>
 <b class="fc">&nbsp;        studentList.add(student3);</b>
@@ -155,21 +155,21 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Test
 &nbsp;    void findStudentsByAge() {
 <b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
-<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        studentList.add(student1);</b>
 <b class="fc">&nbsp;        studentList.add(student2);</b>
 <b class="fc">&nbsp;        studentList.add(student3);</b>
-<b class="fc">&nbsp;        assertEquals(3, studentList.findStudentsByAge(23).size());</b>
+<b class="fc">&nbsp;        assertEquals(3, studentList.findStudentsByAge(33).size());</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Test
 &nbsp;    void size() {
 <b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
-<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        studentList.add(student1);</b>
 <b class="fc">&nbsp;        studentList.add(student2);</b>
 <b class="fc">&nbsp;        studentList.add(student3);</b>
@@ -185,16 +185,16 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Test
 &nbsp;    void copyConstructor() {
 <b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
-<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 2, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 3, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student4 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 4, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student5 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 5, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student6 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 6, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student7 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 7, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student8 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 8, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student9 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 9, 80.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student10 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 10, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 2, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 3, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student4 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 4, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student5 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 5, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student6 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 6, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student7 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 7, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student8 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 8, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student9 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 9, 80.0, new Date(1989, 11, 11));</b>
+<b class="fc">&nbsp;        Student student10 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 10, 80.0, new Date(1989, 11, 11));</b>
 <b class="fc">&nbsp;        studentList.add(student1);</b>
 <b class="fc">&nbsp;        studentList.add(student2);</b>
 <b class="fc">&nbsp;        studentList.add(student3);</b>
@@ -214,16 +214,16 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Test
 &nbsp;    void sort() {
 <b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
-<b class="fc">&nbsp;        Student student1 = new Student(&quot;A&quot;, &quot;J&quot;, 6, 81.0, new Date(2000, 5, 5));</b>
-<b class="fc">&nbsp;        Student student2 = new Student(&quot;B&quot;, &quot;I&quot;, 7, 82.0, new Date(2002, 5, 5));</b>
-<b class="fc">&nbsp;        Student student3 = new Student(&quot;C&quot;, &quot;H&quot;, 8, 83.0, new Date(1996, 5, 5));</b>
-<b class="fc">&nbsp;        Student student4 = new Student(&quot;D&quot;, &quot;G&quot;, 9, 84.0, new Date(1972, 5, 5));</b>
-<b class="fc">&nbsp;        Student student5 = new Student(&quot;E&quot;, &quot;F&quot;, 10, 85.0, new Date(1964, 5, 5));</b>
-<b class="fc">&nbsp;        Student student6 = new Student(&quot;F&quot;, &quot;E&quot;, 1, 86.0, new Date(2008, 5, 5));</b>
-<b class="fc">&nbsp;        Student student7 = new Student(&quot;G&quot;, &quot;D&quot;, 2, 87.0, new Date(2010, 5, 5));</b>
-<b class="fc">&nbsp;        Student student8 = new Student(&quot;H&quot;, &quot;C&quot;, 3, 88.0, new Date(2012, 5, 5));</b>
-<b class="fc">&nbsp;        Student student9 = new Student(&quot;I&quot;, &quot;B&quot;, 4, 89.0, new Date(2015, 5, 5));</b>
-<b class="fc">&nbsp;        Student student10 = new Student(&quot;J&quot;, &quot;A&quot;, 5, 90.0, new Date(2005, 5, 5));</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;A&quot;, &quot;J&quot;, 6, 81.0, new Date(2000, 11, 11));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;B&quot;, &quot;I&quot;, 7, 82.0, new Date(2002, 11, 11));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;C&quot;, &quot;H&quot;, 8, 83.0, new Date(1996, 11, 11));</b>
+<b class="fc">&nbsp;        Student student4 = new Student(&quot;D&quot;, &quot;G&quot;, 9, 84.0, new Date(1972, 11, 11));</b>
+<b class="fc">&nbsp;        Student student5 = new Student(&quot;E&quot;, &quot;F&quot;, 10, 85.0, new Date(1964, 11, 11));</b>
+<b class="fc">&nbsp;        Student student6 = new Student(&quot;F&quot;, &quot;E&quot;, 1, 86.0, new Date(2008, 11, 11));</b>
+<b class="fc">&nbsp;        Student student7 = new Student(&quot;G&quot;, &quot;D&quot;, 2, 87.0, new Date(2010, 11, 11));</b>
+<b class="fc">&nbsp;        Student student8 = new Student(&quot;H&quot;, &quot;C&quot;, 3, 88.0, new Date(2012, 11, 11));</b>
+<b class="fc">&nbsp;        Student student9 = new Student(&quot;I&quot;, &quot;B&quot;, 4, 89.0, new Date(2015, 11, 11));</b>
+<b class="fc">&nbsp;        Student student10 = new Student(&quot;J&quot;, &quot;A&quot;, 5, 90.0, new Date(2005, 11, 11));</b>
 <b class="fc">&nbsp;        studentList.add(student1);</b>
 <b class="fc">&nbsp;        studentList.add(student2);</b>
 <b class="fc">&nbsp;        studentList.add(student3);</b>
@@ -234,6 +234,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        studentList.add(student8);</b>
 <b class="fc">&nbsp;        studentList.add(student9);</b>
 <b class="fc">&nbsp;        studentList.add(student10);</b>
+&nbsp;        //studentList.sort(Student.SortKey.TEST);
 <b class="fc">&nbsp;        studentList.sort(Student.SortKey.FIRSTNAME);</b>
 <b class="fc">&nbsp;        assertEquals(student1, studentList.get(0));</b>
 <b class="fc">&nbsp;        assertEquals(student2, studentList.get(1));</b>
@@ -314,7 +315,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-10-26 09:14</div>
+    <div style="float:right;">generated on 2023-10-26 09:31</div>
 </div>
 </body>
 </html>
