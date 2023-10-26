@@ -1,0 +1,254 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > QuickSort</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: QuickSort (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">QuickSort</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (2/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    97.7%
+  </span>
+  <span class="absValue">
+    (43/44)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">QuickSort$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (3/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    97.8%
+  </span>
+  <span class="absValue">
+    (44/45)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;import java.util.Date;
+&nbsp;
+<b class="nc">&nbsp;public class QuickSort {</b>
+&nbsp;
+&nbsp;    public static Student[] quickSort(Student[] students, int low, int high, Student.SortKey sortKey) {
+<b class="fc">&nbsp;        if (low &lt; high) {</b>
+<b class="fc">&nbsp;            int partitionIndex = partition(students, low, high, sortKey);</b>
+<b class="fc">&nbsp;            quickSort(students, low, partitionIndex - 1, sortKey);</b>
+<b class="fc">&nbsp;            quickSort(students, partitionIndex + 1, high, sortKey);</b>
+&nbsp;        }
+&nbsp;        
+<b class="fc">&nbsp;        return students;</b>
+&nbsp;    }
+&nbsp;    
+&nbsp;    private static int partition(Student[] students, int low, int high, Student.SortKey sortKey) {
+&nbsp;
+&nbsp;        // i is initialized to low - 1
+&nbsp;        // (i is the index of the smaller element.
+&nbsp;        // At the beginning there are no smaller elements)
+<b class="fc">&nbsp;        int i = (low - 1);</b>
+&nbsp;        
+&nbsp;        // prepare a temporary student
+<b class="fc">&nbsp;        Student temp = students[high];</b>
+&nbsp;
+&nbsp;        // iterate through the array
+<b class="fc">&nbsp;        for (int j = low; j &lt; high; j++) {</b>
+&nbsp;            // switch on the sort key
+<b class="fc">&nbsp;            switch (sortKey) {</b>
+&nbsp;                // if the sort key is LASTNAME
+&nbsp;                case LASTNAME:
+&nbsp;                    // pivotLast is the last name of the last element in the array
+<b class="fc">&nbsp;                    String pivotLast = students[high].getLastname();</b>
+&nbsp;                    
+&nbsp;                    // if the last name of the current student is less than the pivot
+<b class="fc">&nbsp;                    if (students[j].getLastname().compareTo(pivotLast) &lt; 0) {</b>
+&nbsp;                        // increment i only if the last name of the current student is less than the pivot
+<b class="fc">&nbsp;                        i++;</b>
+&nbsp;                        // swap the current student with the student at index i using a temporary variable
+<b class="fc">&nbsp;                        temp = students[i];</b>
+<b class="fc">&nbsp;                        students[i] = students[j];</b>
+<b class="fc">&nbsp;                        students[j] = temp;</b>
+&nbsp;                    }
+&nbsp;
+&nbsp;                    // continue to the next iteration
+&nbsp;                    continue;
+&nbsp;                // if the sort key is FIRSTNAME
+&nbsp;                case FIRSTNAME:
+&nbsp;                    // pivotFirst is the last name of the last element in the array
+<b class="fc">&nbsp;                    String pivotFirst = students[high].getFirstname();</b>
+&nbsp;
+&nbsp;                    // if the first name of the current student is less than the pivot
+<b class="fc">&nbsp;                    if (students[j].getFirstname().compareTo(pivotFirst) &lt; 0) {</b>
+&nbsp;                        // increment i only if the first name of the current student is less than the pivot
+<b class="fc">&nbsp;                        i++;</b>
+&nbsp;                        // swap the current student with the student at index i using a temporary variable
+<b class="fc">&nbsp;                        temp = students[i];</b>
+<b class="fc">&nbsp;                        students[i] = students[j];</b>
+<b class="fc">&nbsp;                        students[j] = temp;</b>
+&nbsp;                    }
+&nbsp;
+&nbsp;                    // continue to the next iteration
+&nbsp;                    continue;
+&nbsp;                // if the sort key is STUDENTID
+&nbsp;                case STUDENTID:
+&nbsp;                    //pivotId is the student ID of the last student in the array
+<b class="fc">&nbsp;                    long pivotId = students[high].getStudentId();</b>
+&nbsp;                    
+&nbsp;                    // if the student ID of the current student is less than the pivot
+<b class="fc">&nbsp;                    if (students[j].getStudentId() &lt; pivotId) {</b>
+&nbsp;                        // increment i only if the student ID of the current student is less than the pivot
+<b class="fc">&nbsp;                        i++;</b>
+&nbsp;                        // swap the current student with the student at index i using a temporary variable
+<b class="fc">&nbsp;                        temp = students[i];</b>
+<b class="fc">&nbsp;                        students[i] = students[j];</b>
+<b class="fc">&nbsp;                        students[j] = temp;</b>
+&nbsp;                    }
+&nbsp;
+&nbsp;                    // continue to the next iteration
+&nbsp;                    continue;
+&nbsp;                // if the sort key is WEIGHT
+&nbsp;                case WEIGHT:
+&nbsp;                    // pivotWeight is the weight of the last student in the array
+<b class="fc">&nbsp;                    double pivotWeight = students[high].getWeight();</b>
+&nbsp;
+&nbsp;                    // if the weight of the current student is less than the pivot
+<b class="fc">&nbsp;                    if (students[j].getWeight() &lt; pivotWeight) {</b>
+&nbsp;                        // increment i only if the weight of the current student is less than the pivot
+<b class="fc">&nbsp;                        i++;</b>
+&nbsp;                        // swap the current student with the student at index i using a temporary variable
+<b class="fc">&nbsp;                        temp = students[i];</b>
+<b class="fc">&nbsp;                        students[i] = students[j];</b>
+<b class="fc">&nbsp;                        students[j] = temp;</b>
+&nbsp;                    }
+&nbsp;
+&nbsp;                    // continue to the next iteration
+&nbsp;                    continue;
+&nbsp;                // if the sort key is BIRTHDAY
+&nbsp;                case BIRTHDAY:
+&nbsp;                    // pivotBirthday is the birthday of the last student in the array
+<b class="fc">&nbsp;                    Date pivotBirthday = students[high].getBirthday();</b>
+&nbsp;
+&nbsp;                    // if the birthday of the current student is before the pivot
+<b class="fc">&nbsp;                    if (students[j].getBirthday().before(pivotBirthday)) {</b>
+&nbsp;                        // increment i only if the birthday of the current student is before the pivot
+<b class="fc">&nbsp;                        i++;</b>
+&nbsp;                        // swap the current student with the student at index i using a temporary variable
+<b class="fc">&nbsp;                        temp = students[i];</b>
+<b class="fc">&nbsp;                        students[i] = students[j];</b>
+<b class="fc">&nbsp;                        students[j] = temp;</b>
+&nbsp;                    }
+&nbsp;
+&nbsp;                    // no continue statement is needed here because this is the last case
+&nbsp;            }
+&nbsp;        }
+&nbsp;
+&nbsp;        // swap the student at index i + 1 with the pivot using a temporary variable
+<b class="fc">&nbsp;        temp = students[i + 1];</b>
+<b class="fc">&nbsp;        students[i + 1] = students[high];</b>
+<b class="fc">&nbsp;        students[high] = temp;</b>
+&nbsp;
+&nbsp;        // return the index of the pivot (the index of the birthday that is in the correct position)
+<b class="fc">&nbsp;        return i + 1;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-10-26 09:14</div>
+</div>
+</body>
+</html>

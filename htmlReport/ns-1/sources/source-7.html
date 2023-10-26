@@ -1,0 +1,320 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > StudentListTest</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: StudentListTest (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">StudentListTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (164/164)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;import org.junit.jupiter.api.Assertions;
+&nbsp;import org.junit.jupiter.api.Test;
+&nbsp;
+&nbsp;import java.util.Date;
+&nbsp;
+&nbsp;import static org.junit.jupiter.api.Assertions.*;
+&nbsp;
+<b class="fc">&nbsp;class StudentListTest {</b>
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void add() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        assertTrue(studentList.add(student));</b>
+<b class="fc">&nbsp;        assertFalse(studentList.add(student));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void remove() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        studentList.add(student1);</b>
+<b class="fc">&nbsp;        studentList.add(student3);</b>
+<b class="fc">&nbsp;        assertTrue(studentList.remove(student1));</b>
+<b class="fc">&nbsp;        assertFalse(studentList.remove(student2));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void removeIndex() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        studentList.add(student1);</b>
+<b class="fc">&nbsp;        studentList.add(student2);</b>
+<b class="fc">&nbsp;        studentList.add(student3);</b>
+<b class="fc">&nbsp;        assertEquals(student1, studentList.remove(0));</b>
+<b class="fc">&nbsp;        assertNull(studentList.remove(-1));</b>
+<b class="fc">&nbsp;        assertNull(studentList.remove(3));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void get() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        studentList.add(student);</b>
+<b class="fc">&nbsp;        assertEquals(student, studentList.get(0));</b>
+<b class="fc">&nbsp;        assertNull(studentList.get(-1));</b>
+<b class="fc">&nbsp;        assertNull(studentList.get(1));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void findLastName() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        studentList.add(student1);</b>
+<b class="fc">&nbsp;        studentList.add(student2);</b>
+<b class="fc">&nbsp;        studentList.add(student3);</b>
+<b class="fc">&nbsp;        assertEquals(3, studentList.findLastName(&quot;lastname&quot;).size());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void findFirstName() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        studentList.add(student1);</b>
+<b class="fc">&nbsp;        studentList.add(student2);</b>
+<b class="fc">&nbsp;        studentList.add(student3);</b>
+<b class="fc">&nbsp;        assertEquals(3, studentList.findFirstName(&quot;firstname&quot;).size());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void findStudentsByAge() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        studentList.add(student1);</b>
+<b class="fc">&nbsp;        studentList.add(student2);</b>
+<b class="fc">&nbsp;        studentList.add(student3);</b>
+<b class="fc">&nbsp;        assertEquals(3, studentList.findStudentsByAge(23).size());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void size() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1234567, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 12345678, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 123456789, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        studentList.add(student1);</b>
+<b class="fc">&nbsp;        studentList.add(student2);</b>
+<b class="fc">&nbsp;        studentList.add(student3);</b>
+<b class="fc">&nbsp;        assertEquals(3, studentList.size());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void constructor() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        assertEquals(0, studentList.size());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void copyConstructor() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 1, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 2, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 3, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student4 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 4, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student5 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 5, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student6 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 6, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student7 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 7, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student8 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 8, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student9 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 9, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student10 = new Student(&quot;firstname&quot;, &quot;lastname&quot;, 10, 80.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        studentList.add(student1);</b>
+<b class="fc">&nbsp;        studentList.add(student2);</b>
+<b class="fc">&nbsp;        studentList.add(student3);</b>
+<b class="fc">&nbsp;        studentList.add(student4);</b>
+<b class="fc">&nbsp;        studentList.add(student5);</b>
+<b class="fc">&nbsp;        studentList.add(student6);</b>
+<b class="fc">&nbsp;        studentList.add(student7);</b>
+<b class="fc">&nbsp;        studentList.add(student8);</b>
+<b class="fc">&nbsp;        studentList.add(student9);</b>
+<b class="fc">&nbsp;        studentList.add(student10);</b>
+<b class="fc">&nbsp;        StudentList studentListCopy = new StudentList(studentList);</b>
+<b class="fc">&nbsp;        studentListCopy.remove(0);</b>
+<b class="fc">&nbsp;        assertEquals(9, studentListCopy.size());</b>
+<b class="fc">&nbsp;        assertEquals(10, studentList.size());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void sort() {
+<b class="fc">&nbsp;        StudentList studentList = new StudentList();</b>
+<b class="fc">&nbsp;        Student student1 = new Student(&quot;A&quot;, &quot;J&quot;, 6, 81.0, new Date(2000, 5, 5));</b>
+<b class="fc">&nbsp;        Student student2 = new Student(&quot;B&quot;, &quot;I&quot;, 7, 82.0, new Date(2002, 5, 5));</b>
+<b class="fc">&nbsp;        Student student3 = new Student(&quot;C&quot;, &quot;H&quot;, 8, 83.0, new Date(1996, 5, 5));</b>
+<b class="fc">&nbsp;        Student student4 = new Student(&quot;D&quot;, &quot;G&quot;, 9, 84.0, new Date(1972, 5, 5));</b>
+<b class="fc">&nbsp;        Student student5 = new Student(&quot;E&quot;, &quot;F&quot;, 10, 85.0, new Date(1964, 5, 5));</b>
+<b class="fc">&nbsp;        Student student6 = new Student(&quot;F&quot;, &quot;E&quot;, 1, 86.0, new Date(2008, 5, 5));</b>
+<b class="fc">&nbsp;        Student student7 = new Student(&quot;G&quot;, &quot;D&quot;, 2, 87.0, new Date(2010, 5, 5));</b>
+<b class="fc">&nbsp;        Student student8 = new Student(&quot;H&quot;, &quot;C&quot;, 3, 88.0, new Date(2012, 5, 5));</b>
+<b class="fc">&nbsp;        Student student9 = new Student(&quot;I&quot;, &quot;B&quot;, 4, 89.0, new Date(2015, 5, 5));</b>
+<b class="fc">&nbsp;        Student student10 = new Student(&quot;J&quot;, &quot;A&quot;, 5, 90.0, new Date(2005, 5, 5));</b>
+<b class="fc">&nbsp;        studentList.add(student1);</b>
+<b class="fc">&nbsp;        studentList.add(student2);</b>
+<b class="fc">&nbsp;        studentList.add(student3);</b>
+<b class="fc">&nbsp;        studentList.add(student4);</b>
+<b class="fc">&nbsp;        studentList.add(student5);</b>
+<b class="fc">&nbsp;        studentList.add(student6);</b>
+<b class="fc">&nbsp;        studentList.add(student7);</b>
+<b class="fc">&nbsp;        studentList.add(student8);</b>
+<b class="fc">&nbsp;        studentList.add(student9);</b>
+<b class="fc">&nbsp;        studentList.add(student10);</b>
+<b class="fc">&nbsp;        studentList.sort(Student.SortKey.FIRSTNAME);</b>
+<b class="fc">&nbsp;        assertEquals(student1, studentList.get(0));</b>
+<b class="fc">&nbsp;        assertEquals(student2, studentList.get(1));</b>
+<b class="fc">&nbsp;        assertEquals(student3, studentList.get(2));</b>
+<b class="fc">&nbsp;        assertEquals(student4, studentList.get(3));</b>
+<b class="fc">&nbsp;        assertEquals(student5, studentList.get(4));</b>
+<b class="fc">&nbsp;        assertEquals(student6, studentList.get(5));</b>
+<b class="fc">&nbsp;        assertEquals(student7, studentList.get(6));</b>
+<b class="fc">&nbsp;        assertEquals(student8, studentList.get(7));</b>
+<b class="fc">&nbsp;        assertEquals(student9, studentList.get(8));</b>
+<b class="fc">&nbsp;        assertEquals(student10, studentList.get(9));</b>
+<b class="fc">&nbsp;        studentList.sort(Student.SortKey.LASTNAME);</b>
+<b class="fc">&nbsp;        assertEquals(student10, studentList.get(0));</b>
+<b class="fc">&nbsp;        assertEquals(student9, studentList.get(1));</b>
+<b class="fc">&nbsp;        assertEquals(student8, studentList.get(2));</b>
+<b class="fc">&nbsp;        assertEquals(student7, studentList.get(3));</b>
+<b class="fc">&nbsp;        assertEquals(student6, studentList.get(4));</b>
+<b class="fc">&nbsp;        assertEquals(student5, studentList.get(5));</b>
+<b class="fc">&nbsp;        assertEquals(student4, studentList.get(6));</b>
+<b class="fc">&nbsp;        assertEquals(student3, studentList.get(7));</b>
+<b class="fc">&nbsp;        assertEquals(student2, studentList.get(8));</b>
+<b class="fc">&nbsp;        assertEquals(student1, studentList.get(9));</b>
+<b class="fc">&nbsp;        studentList.sort(Student.SortKey.STUDENTID);</b>
+<b class="fc">&nbsp;        assertEquals(student6, studentList.get(0));</b>
+<b class="fc">&nbsp;        assertEquals(student7, studentList.get(1));</b>
+<b class="fc">&nbsp;        assertEquals(student8, studentList.get(2));</b>
+<b class="fc">&nbsp;        assertEquals(student9, studentList.get(3));</b>
+<b class="fc">&nbsp;        assertEquals(student10, studentList.get(4));</b>
+<b class="fc">&nbsp;        assertEquals(student1, studentList.get(5));</b>
+<b class="fc">&nbsp;        assertEquals(student2, studentList.get(6));</b>
+<b class="fc">&nbsp;        assertEquals(student3, studentList.get(7));</b>
+<b class="fc">&nbsp;        assertEquals(student4, studentList.get(8));</b>
+<b class="fc">&nbsp;        assertEquals(student5, studentList.get(9));</b>
+<b class="fc">&nbsp;        studentList.sort(Student.SortKey.WEIGHT);</b>
+<b class="fc">&nbsp;        assertEquals(student1, studentList.get(0));</b>
+<b class="fc">&nbsp;        assertEquals(student2, studentList.get(1));</b>
+<b class="fc">&nbsp;        assertEquals(student3, studentList.get(2));</b>
+<b class="fc">&nbsp;        assertEquals(student4, studentList.get(3));</b>
+<b class="fc">&nbsp;        assertEquals(student5, studentList.get(4));</b>
+<b class="fc">&nbsp;        assertEquals(student6, studentList.get(5));</b>
+<b class="fc">&nbsp;        assertEquals(student7, studentList.get(6));</b>
+<b class="fc">&nbsp;        assertEquals(student8, studentList.get(7));</b>
+<b class="fc">&nbsp;        assertEquals(student9, studentList.get(8));</b>
+<b class="fc">&nbsp;        assertEquals(student10, studentList.get(9));</b>
+<b class="fc">&nbsp;        studentList.sort(Student.SortKey.BIRTHDAY);</b>
+<b class="fc">&nbsp;        assertEquals(student5, studentList.get(0));</b>
+<b class="fc">&nbsp;        assertEquals(student4, studentList.get(1));</b>
+<b class="fc">&nbsp;        assertEquals(student3, studentList.get(2));</b>
+<b class="fc">&nbsp;        assertEquals(student1, studentList.get(3));</b>
+<b class="fc">&nbsp;        assertEquals(student2, studentList.get(4));</b>
+<b class="fc">&nbsp;        assertEquals(student10, studentList.get(5));</b>
+<b class="fc">&nbsp;        assertEquals(student6, studentList.get(6));</b>
+<b class="fc">&nbsp;        assertEquals(student7, studentList.get(7));</b>
+<b class="fc">&nbsp;        assertEquals(student8, studentList.get(8));</b>
+<b class="fc">&nbsp;        assertEquals(student9, studentList.get(9));</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-10-26 09:14</div>
+</div>
+</body>
+</html>

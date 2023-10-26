@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
@@ -9,7 +10,7 @@ class StudentListTest {
     @Test
     void add() {
         StudentList studentList = new StudentList();
-        Student student = new Student("Kilian", "Achenbach", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
         assertTrue(studentList.add(student));
         assertFalse(studentList.add(student));
     }
@@ -17,9 +18,9 @@ class StudentListTest {
     @Test
     void remove() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("Kilian", "Achenbach", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("Kilian", "Achenbach", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("Kilian", "Achenbach", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
         studentList.add(student1);
         studentList.add(student3);
         assertTrue(studentList.remove(student1));
@@ -29,9 +30,9 @@ class StudentListTest {
     @Test
     void removeIndex() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("Kilian", "Achenbach", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("Kilian", "Achenbach", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("Kilian", "Achenbach", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
@@ -43,7 +44,7 @@ class StudentListTest {
     @Test
     void get() {
         StudentList studentList = new StudentList();
-        Student student = new Student("Kilian", "Achenbach", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
         studentList.add(student);
         assertEquals(student, studentList.get(0));
         assertNull(studentList.get(-1));
@@ -53,33 +54,33 @@ class StudentListTest {
     @Test
     void findLastName() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("Kilian", "Achenbach", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("Kilian", "Achenbach", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("Kilian", "Achenbach", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
-        assertEquals(3, studentList.findLastName("Achenbach").size());
+        assertEquals(3, studentList.findLastName("lastname").size());
     }
 
     @Test
     void findFirstName() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("Kilian", "Achenbach", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("Kilian", "Achenbach", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("Kilian", "Achenbach", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
-        assertEquals(3, studentList.findFirstName("Kilian").size());
+        assertEquals(3, studentList.findFirstName("firstname").size());
     }
 
     @Test
     void findStudentsByAge() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("Kilian", "Achenbach", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("Kilian", "Achenbach", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("Kilian", "Achenbach", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
@@ -89,9 +90,9 @@ class StudentListTest {
     @Test
     void size() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("Kilian", "Achenbach", 1234567, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("Kilian", "Achenbach", 12345678, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("Kilian", "Achenbach", 123456789, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1234567, 80.0, new Date(2000, 5, 5));
+        Student student2 = new Student("firstname", "lastname", 12345678, 80.0, new Date(2000, 5, 5));
+        Student student3 = new Student("firstname", "lastname", 123456789, 80.0, new Date(2000, 5, 5));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
@@ -107,16 +108,16 @@ class StudentListTest {
     @Test
     void copyConstructor() {
         StudentList studentList = new StudentList();
-        Student student1 = new Student("Kilian", "Achenbach", 1, 80.0, new Date(2000, 5, 5));
-        Student student2 = new Student("Kilian", "Achenbach", 2, 80.0, new Date(2000, 5, 5));
-        Student student3 = new Student("Kilian", "Achenbach", 3, 80.0, new Date(2000, 5, 5));
-        Student student4 = new Student("Kilian", "Achenbach", 4, 80.0, new Date(2000, 5, 5));
-        Student student5 = new Student("Kilian", "Achenbach", 5, 80.0, new Date(2000, 5, 5));
-        Student student6 = new Student("Kilian", "Achenbach", 6, 80.0, new Date(2000, 5, 5));
-        Student student7 = new Student("Kilian", "Achenbach", 7, 80.0, new Date(2000, 5, 5));
-        Student student8 = new Student("Kilian", "Achenbach", 8, 80.0, new Date(2000, 5, 5));
-        Student student9 = new Student("Kilian", "Achenbach", 9, 80.0, new Date(2000, 5, 5));
-        Student student10 = new Student("Kilian", "Achenbach", 10, 80.0, new Date(2000, 5, 5));
+        Student student1 = new Student("firstname", "lastname", 1, 80.0, new Date(2000, 5, 5));
+        Student student2 = new Student("firstname", "lastname", 2, 80.0, new Date(2000, 5, 5));
+        Student student3 = new Student("firstname", "lastname", 3, 80.0, new Date(2000, 5, 5));
+        Student student4 = new Student("firstname", "lastname", 4, 80.0, new Date(2000, 5, 5));
+        Student student5 = new Student("firstname", "lastname", 5, 80.0, new Date(2000, 5, 5));
+        Student student6 = new Student("firstname", "lastname", 6, 80.0, new Date(2000, 5, 5));
+        Student student7 = new Student("firstname", "lastname", 7, 80.0, new Date(2000, 5, 5));
+        Student student8 = new Student("firstname", "lastname", 8, 80.0, new Date(2000, 5, 5));
+        Student student9 = new Student("firstname", "lastname", 9, 80.0, new Date(2000, 5, 5));
+        Student student10 = new Student("firstname", "lastname", 10, 80.0, new Date(2000, 5, 5));
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
